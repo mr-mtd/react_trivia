@@ -6,13 +6,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.2.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "^3.9.6",
+    "reactstrap": "^8.5.1",
+    "typescript": "^3.9.7",
     "update": "^0.7.4",
     "uuid": "^8.2.0",
-    "uuidv4": "^6.1.1"
+    "uuidv4": "^6.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

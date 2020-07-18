@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
 import questions from './questions.json'
+import 'bootstrap/dist/css/bootstrap.css';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './App.css';
+import './scss/_variables.css';
 
-class InputSubmitForm extends Component{
 
-    
+class TriviaGame extends Component{
 
     constructor(props){
         super(props)
-        //add all variable names here
 
         this.state= {
             value: '',
@@ -22,10 +27,6 @@ class InputSubmitForm extends Component{
             score: 0,
             index: 0
         };
-
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleInputChange = this.handleInputChange.bind(this);
-
     }
 
     handleSubmit = (event) => {
@@ -39,7 +40,6 @@ class InputSubmitForm extends Component{
     handleOnClick = (event) =>{
 
         if( this.state.index < questions.length ){
-
             if(event.target.value === questions[this.state.index].answer){
                 console.log('button clicked')
                 console.log("target val: " + event.target.value)
@@ -50,12 +50,11 @@ class InputSubmitForm extends Component{
                     answerResponse: "CORRECT!",
                     score: this.state.score+50,
                 })
-            }
-            else{
+            }else{
                 this.setState({
                     answerResponse: "WRONG!",
                     score: this.state.score-1,            
-                })   
+                })
             } 
         }
 
@@ -85,22 +84,12 @@ class InputSubmitForm extends Component{
         })
     }
 
-
-    
-
-    //two ways to store "state" (or values in variables)
-    //this is a quick way and below is the way you would do
-    //when using values for an API call
-
     // handleInputChange = (event) => {
     //     console.log("handle input change called")
     //     this.setState({
-    //        value : event.target.value
-    //     })
+    //        value : event.target.value })
     // }
 
-
-    
         
     render() {
 
@@ -108,52 +97,54 @@ class InputSubmitForm extends Component{
         if (i > questions.length-1){
             return(
                 <div>
-                    <p>Game Over. Your Score Was + {this.state.score}</p>
+                    <p> Game Over. Your Score Was + {this.state.score}</p>
                 </div>
-            )
+                )
         }
         return(
-           
-            <div>
-                <table>
-                <tbody>
-                <tr>
-                    <td><p>Question: </p>
-                    <p><label>{this.state.question} </label></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> <p><label>{this.state.answerResponse}</label></p></td>
-                </tr>
-                <tr>
-                    <td> Score:  {this.state.score} </td>
-                </tr>
-                </tbody>
-                </table>
-    
+
+            <>
+            <Container fluid="md" >
+                <Row md="true" fluid="md">
+                    <Col><h2>{this.state.question}</h2> <br /> </Col> 
+                </Row>
+                <Row sm="true" fluid="sm">
+                    <Col><h3 align="middle">{this.state.answerResponse} </h3> <br /> </Col>
+                </Row>
+                <Row sm="true" fluid="sm" >
+                    <Col> <h2 align="middle">Score:  {this.state.score} </h2> <br /> </Col>
+                </Row>
+            </Container>
+
+
+            
+                    {/* <div class="container-fluid">{this.state.question}</div>
+                    <div class="Container-fluid">{this.state.answerResponse}</div>
+                    <div class="Container-fluid">Score:  {this.state.score}</div>
+            */}
                 <table cellPadding="30" align="center">
                 <tbody>
                     <tr>
                     <td><p>
-                        <button value={questions[i].choices.a} onClick={this.handleOnClick}>
-                            {questions[i].choices.a}   </button>  </p> </td>
+                        <Button variant="info"  value={questions[i].choices.a} onClick={this.handleOnClick}>
+                            {questions[i].choices.a}   </Button>{''}  </p> </td>
                     <td><p>
-                        <button value={questions[i].choices.b} onClick={this.handleOnClick}>
-                            {questions[i].choices.b}</button> </p> </td>
+                        <Button variant="info" value={questions[i].choices.b} onClick={this.handleOnClick}>
+                            {questions[i].choices.b}</Button> </p> </td>
                     </tr>
                     <tr>
                         <td><p>
-                            <button value={questions[i].choices.c} onClick={this.handleOnClick}>
-                                {questions[i].choices.c}</button></p></td>
+                            <Button variant="info" value={questions[i].choices.c} onClick={this.handleOnClick}>
+                                {questions[i].choices.c}</Button></p></td>
                         <td><p>
-                            <button vvalue={questions[i].choices.d} onClick={this.handleOnClick}>
-                                {questions[i].choices.d}</button></p></td>
+                            <Button variant="info" value={questions[i].choices.d} onClick={this.handleOnClick}>
+                                {questions[i].choices.d}</Button></p></td>
                     </tr>
-                    </tbody>
-                    </table>
-                </div>
+                </tbody>
+                </table>
+            </> 
         )}
 }
 
 
-export default InputSubmitForm;
+export default TriviaGame;

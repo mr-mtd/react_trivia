@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import App from './App';
-import FormSubmit from './FormSubmit';
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
+    
 
 ReactDOM.render(
 
    <React.StrictMode>
-       <FormSubmit/>
+       <App/>
    </React.StrictMode>,
    document.getElementById('root')
 );
