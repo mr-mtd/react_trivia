@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import questions from './questions.json'
+import React, {Component} from 'react';
+//import questions from './questions2.json'
+import questions from './generalTriviaSet1.json';
 import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
