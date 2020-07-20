@@ -55,7 +55,7 @@ class TriviaGame extends Component{
                 this.setState({
                     answerResponse: "WRONG! Correct answer was " + questions[this.state.index].answer,
 
-                    score: this.state.score-1,            
+                    score: this.state.score-20,            
                 })
             } 
         }
