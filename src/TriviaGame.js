@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './App.css';
 import './scss/_variables.css';
+import StartScreen from "./StartScreen";
 
 
 class TriviaGame extends Component{
@@ -26,7 +27,9 @@ class TriviaGame extends Component{
             answerc: questions[0].c,
             answerd: questions[0].d,
             score: 0,
-            index: 0
+            index: 0,
+            player1: "?",
+            player2: "?"
         };
     }
 
@@ -91,7 +94,6 @@ class TriviaGame extends Component{
     //     this.setState({
     //        value : event.target.value })
     // }
-
         
     render() {
 
@@ -106,6 +108,10 @@ class TriviaGame extends Component{
 
         return(
             <>
+                <textarea>{StartScreen.player1}</textarea>
+                <textarea>{StartScreen.player2}</textarea>
+
+
             <br></br>
             <br></br>
             <Container fluid="md" >

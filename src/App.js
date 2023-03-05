@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App';
-import TriviaGame from './TriviaGame';
+//import TriviaGame from './TriviaGame';
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
+import StartScreen from './StartScreen';
 
-ReactDOM.render(<TriviaGame />, document.getElementById('root'));
-  
+ReactDOM.render(
+    <StartScreen />,
+    document.getElementById('root'));
 
-export default TriviaGame
+export default StartScreen
